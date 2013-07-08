@@ -1,15 +1,19 @@
-# -*- coding: cp1252 -*-
-# Fibonacci Sequence – Enter a number and have the
-# program generate the Fibonacci sequence to that number
-# or to the Nth number
+#Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number.
 
-n = int(raw_input('How many numbers do you need? '))
-series = [1]
+print "This provides the fibonacci sequence up to the Nth number given as input."
+number = input("Enter number: ")
 
-while len(series) < n:
-    if len(series) == 1:
-        series.append(1)
-    else:
-        series.append(series[-1] + series[-2])
+def fibonacci(num):
+        print "Sequence: "
+        seq = [0,1]
+        if num == 1:
+                print "0"
+        elif num <= 0:
+                print "ERROR: cannot compute...beep boop bop"
+        else:   
+                while len(seq) < num:
+                        seq.append(seq[-1]+seq[-2])
+                for x in seq:
+                        print x
 
-print series
+fibonacci(number)
