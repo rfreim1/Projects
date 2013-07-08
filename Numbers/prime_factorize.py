@@ -4,6 +4,8 @@ from math import floor, sqrt
 print "Enter a number and all prime factor will be found."
 number = input("Enter number: ")
 
+
+#gets factors of prime number
 def prime_factorize(num):
         factors = []
         half_way = int(floor( sqrt(num) ) )
@@ -14,7 +16,7 @@ def prime_factorize(num):
                         factors.extend(prime_helper(n))
         return factors
 
-
+#avoids repetitive code
 def prime_helper(x):
         xp = prime_factorize(x)
         if len(xp) == 0:
@@ -22,12 +24,10 @@ def prime_helper(x):
         else:
                 return xp
 
-def prime_wrapper(num):
+if __name__ == '__main__':
         x = prime_factorize(number)
         x = set(x)
         if len(x) == 0:
                 print "No prime factors of " + str(number) + ". (It is prime)"
         else:
                 print "Prime Factors: " + str(list(x))
-
-prime_wrapper(number)
