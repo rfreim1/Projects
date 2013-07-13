@@ -16,5 +16,4 @@ if __name__ == '__main__':
 	cost = input("Enter cost of a sqft. tile: ")
 	width = input("Enter width of floor plan: ")
 	height = input("Enter height of floor plan: ")
-	
 	print "The cost of the tiling is $%.2f" %(tile(cost, width, height))
